@@ -1,0 +1,130 @@
+/* 1. Global Reset & Variables */
+:root {
+    --bg-color: #0a0a0a;       /* Deep Black */
+    --text-primary: #ffffff;    /* Pure White */
+    --text-secondary: #a1a1a1;  /* Muted Gray */
+    --accent-color: #0070f3;    /* Professional Blue */
+    --card-bg: #161616;         /* Slightly lighter black for cards */
+    --font-main: 'Inter', -apple-system, sans-serif;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: var(--bg-color);
+    color: var(--text-primary);
+    font-family: var(--font-main);
+    line-height: 1.6;
+    overflow-x: hidden;
+}
+
+/* 2. Navigation Styling */
+header {
+    padding: 2rem 5%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: sticky;
+    top: 0;
+    background: rgba(10, 10, 10, 0.8);
+    backdrop-filter: blur(10px);
+    z-index: 1000;
+}
+
+.logo {
+    font-weight: 800;
+    letter-spacing: -1px;
+    font-size: 1.2rem;
+}
+
+nav ul {
+    display: flex;
+    list-style: none;
+    gap: 2rem;
+}
+
+nav a {
+    text-decoration: none;
+    color: var(--text-secondary);
+    font-size: 0.9rem;
+    font-weight: 500;
+    transition: color 0.3s ease;
+}
+
+nav a:hover, nav a.active {
+    color: var(--text-primary);
+}
+
+.contact-btn {
+    background: var(--text-primary);
+    color: var(--bg-color);
+    padding: 0.6rem 1.2rem;
+    border-radius: 5px;
+    font-weight: 600;
+    text-decoration: none;
+}
+
+/* 3. Grid & Layout System */
+.container {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 4rem 5%;
+}
+
+.grid-2-col {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+    margin-bottom: 4rem;
+}
+
+.grid-3-col {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
+}
+
+/* 4. Section Headers */
+h1 { font-size: 3.5rem; letter-spacing: -2px; margin-bottom: 1rem; }
+h3 { color: var(--text-secondary); text-transform: uppercase; font-size: 0.8rem; letter-spacing: 2px; margin-bottom: 1.5rem; }
+p { color: var(--text-secondary); font-size: 1.1rem; margin-bottom: 2rem; }
+
+/* 5. Project & Image Cards */
+.project-card, .img-box, .img-box-small {
+    background: var(--card-bg);
+    border: 1px solid #333;
+    border-radius: 12px;
+    padding: 1.5rem;
+    transition: transform 0.3s ease, border-color 0.3s ease;
+}
+
+.project-card:hover {
+    transform: translateY(-5px);
+    border-color: var(--accent-color);
+}
+
+.img-box {
+    height: 200px;
+    margin-bottom: 1rem;
+}
+
+/* 6. List Styling */
+ul { list-style: none; }
+li {
+    padding: 0.5rem 0;
+    border-bottom: 1px solid #222;
+    color: var(--text-secondary);
+}
+li:last-child { border-bottom: none; }
+
+/* 7. Responsive Design */
+@media (max-width: 768px) {
+    .grid-2-col, .grid-3-col {
+        grid-template-columns: 1fr;
+    }
+    h1 { font-size: 2.5rem; }
+}
